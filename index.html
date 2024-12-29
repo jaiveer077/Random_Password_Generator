@@ -13,6 +13,7 @@
             height: 100vh;
             background-color: #f4f4f9;
         }
+
         .container {
             background-color: white;
             padding: 30px;
@@ -21,10 +22,12 @@
             text-align: center;
             max-width: 350px;
         }
+
         h2 {
             margin-bottom: 20px;
             color: #333;
         }
+
         #passwordBox {
             width: 100%;
             padding: 10px;
@@ -35,6 +38,7 @@
             margin-bottom: 20px;
             background-color: #f7f7f7;
         }
+
         button {
             padding: 10px 20px;
             background-color: #4CAF50;
@@ -44,6 +48,7 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #45a049;
         }
@@ -51,24 +56,24 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Random Password Generator</h2>
-        <input type="text" id="passwordBox" readonly>
-        <button onclick="generatePassword()">Generate Password</button>
-    </div>
+<div class="container">
+    <h2>Random Password Generator</h2>
+    <input type="text" id="passwordBox" readonly>
+    <button onclick="generatePassword()">Generate Password</button>
+</div>
 
-    <script>
-        function generatePassword() {
-            let pass = '';
-            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
-            let passLength = 10;
-            for (let i = 0; i < passLength; i++) {
-                let randomIndex = Math.floor(Math.random() * characters.length);
-                pass += characters.charAt(randomIndex);
-            }
-            document.getElementById('passwordBox').value = pass;
+<script>
+    function generatePassword() {
+        let pass = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
+        let passLength = Math.floor(Math.random() * 10) + 15;
+        for (let i = 0; i < passLength; i++) {
+            let randomIndex = Math.floor(Math.random() * characters.length);
+            pass += characters.charAt(randomIndex);
         }
-    </script>
+        document.getElementById('passwordBox').value = pass;
+    }
+</script>
 
 </body>
 </html>
